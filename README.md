@@ -43,8 +43,6 @@ The server should now be running at `http://localhost:8000`. You can access the 
 
 ## Test the API
 
-## Test the API
-
 You can test the API using tools like cURL, Postman, or any HTTP client. Here are some example requests for testing the API endpoints:
 
 Base URL: `http://localhost:8000/api`
