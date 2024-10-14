@@ -92,15 +92,15 @@ class UserUpdate(BaseModel):
 # model for serializing events, used for retrieving events from Google Calendar and NYU Engage and suggesting events to users
 # which corresponds to Events: imports in Google Calendar API
 class Event(BaseModel):
-    id: str = Field(..., alias="_id")
+    id: Optional[PyObjectId] = Field(default=None, alias="_id")
     name: str = Field(...)
-    description: str = Field(...)
-    category: str = Field(...)
-    venue: str = Field(...)
     startTime: datetime = Field(...)
     endTime: datetime = Field(...)
     createdAt: datetime = Field(...)
     source: str = Field(...)    # NYU Engage, Personal, etc.
+    description: Optional[str] = Field(None, description="Description of the event")
+    category: Optional[str] = Field(None, description="Category of the event")
+    venue: Optional[str] = Field(None, description="Venue of the event")
     responseStatus: Optional[str] = Field(None, description="Response status of the event")
     # "needsAction", "declined", "tentative", "accepted"
 
@@ -112,7 +112,6 @@ class Event(BaseModel):
         }
         json_schema_extra = {
             "example": {
-                "_id": "5f8d0d55b54764421b7156bc",
                 "name": "STEM Conference 2024",
                 "description": "A STEM conference",
                 "category": "STEM",
@@ -121,5 +120,32 @@ class Event(BaseModel):
                 "endTime": "2024-11-01T17:00:00Z",
                 "createdAt": "2024-10-01T10:00:00Z",
                 "source": "NYU Engage"
+            }
+        }
+
+class EventUpdate(BaseModel):
+    name: Optional[str] = None
+    startTime: Optional[datetime] = None
+    endTime: Optional[datetime] = None
+    source: Optional[str] = None
+    description: Optional[str] = None
+    category: Optional[str] = None
+    venue: Optional[str] = None
+    responseStatus: Optional[str] = None
+
+    class Config:
+        arbitrary_types_allowed = True
+        json_encoders = {
+            ObjectId: str,
+            datetime: lambda v: v.isoformat()
+        }
+        json_schema_extra = {
+            "example": {
+                "name": "STEM Conference 2024",
+                "description": "A STEM conference",
+                "category": "STEM",
+                "venue": "NYU Auditorium",
+                "startTime": "2024-11-01T09:00:00Z",
+                "endTime": "2024-11-01T17:00:00Z",
             }
         }

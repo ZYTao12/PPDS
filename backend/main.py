@@ -3,7 +3,7 @@ from pymongo import MongoClient
 import os
 from dotenv import load_dotenv
 from urllib.parse import quote_plus
-from backend.routes import router
+from routes import router
 
 load_dotenv()
 
