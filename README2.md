@@ -11,9 +11,9 @@ The finished project will be a web application that aims to streamline event man
 This application solves the problem of manually managing event invitations and RSVPs for NYU students. By automating the process of adding events to Google Calendar, the app makes it easier to stay organized and keep track of relevant events, eliminating manual work and reducing calendar clutter.
 
 
-## Project Structure
+## Submission Structure
 
-This week's project uses **FastAPI** for the backend and **MongoDB** as the database to store user and event data. The app integrates with Google Calendar and uses API routes to manage user and event operations.
+This week's portion of the project uses **FastAPI** for the backend and **MongoDB** as the database to store user and event data. The app integrates with Google Calendar and uses API routes to manage user and event operations.
 
 ### Files:
 
@@ -79,11 +79,11 @@ The server should now be running at `http://localhost:8000`. You can access the 
 
 ## Test the API
 
-You can test the API using tools like cURL, Postman, or any HTTP client. Here are some example requests for testing the API endpoints:
+You can use Postman to interact with the API. Here are some example requests for testing the API endpoints:
 
-Base URL: `http://localhost:8000/api`
+Test API Endpoints: Use Postman to make requests to the various API endpoints like /users/, /events/, etc.
 
-For more detailed documentation of the API endpoints, including request/response schemas and available operations, please visit: [API Documentation](http://localhost:8000/docs)
+Example API Requests:
 
 ### User Collection
 
@@ -170,18 +170,17 @@ For more detailed documentation of the API endpoints, including request/response
 
 Replace `{user_id}` and `{event_id}` with actual IDs when testing. For the OAuth 2.0 login, you'll need to obtain a valid OAuth access token from the authentication provider.
 
-## Postman Tests
+Base URL: `http://localhost:8000/api`
 
-To test the API using Postman:
+For more detailed documentation of the API endpoints, including request/response schemas and available operations, please visit: [API Documentation](http://localhost:8000/docs)
 
-1. Test each URL (`/users/`, `/events/`, etc.).
-2. Record the request body sent for `POST` and `PUT` methods, e.g.,
-   ```json
-   {
-     "title": "Sample Event",
-     "description": "This is a sample event",
-     "date": "2024-10-17T10:00:00Z"
-   }
+## Database Population
+
+The sample data is provided in a CSV file, containing event information scraped from NYU Engage. This file includes event titles, descriptions, dates, and locations that we used to populate and test the database.
+
+To load the sample data from the CSV into your MongoDB database:
+Use Python’s pandas library to read the CSV and insert the data into MongoDB:
+
 
 ## Credits
 
