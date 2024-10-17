@@ -1,4 +1,4 @@
-from typing import Any, Optional
+from typing import Any, List, Optional
 from pydantic import BaseModel, Field, GetJsonSchemaHandler
 from pydantic_core import core_schema
 from bson import ObjectId
@@ -99,7 +99,7 @@ class Event(BaseModel):
     createdAt: datetime = Field(...)
     source: str = Field(...)    # NYU Engage, Personal, etc.
     description: Optional[str] = Field(None, description="Description of the event")
-    category: Optional[str] = Field(None, description="Category of the event")
+    category: Optional[List[str]] = Field(None, description="Category of the event")
     venue: Optional[str] = Field(None, description="Venue of the event")
     responseStatus: Optional[str] = Field(None, description="Response status of the event")
     # "needsAction", "declined", "tentative", "accepted"
@@ -129,7 +129,7 @@ class EventUpdate(BaseModel):
     endTime: Optional[datetime] = None
     source: Optional[str] = None
     description: Optional[str] = None
-    category: Optional[str] = None
+    category: Optional[List[str]] = None
     venue: Optional[str] = None
     responseStatus: Optional[str] = None
 
