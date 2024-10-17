@@ -79,11 +79,11 @@ The server should now be running at `http://localhost:8000`. You can access the 
 
 ## Test the API
 
-You can test the API using tools like cURL, Postman, or any HTTP client. Here are some example requests for testing the API endpoints:
+You can use Postman to interact with the API. Here are some example requests for testing the API endpoints:
 
-Base URL: `http://localhost:8000/api`
+Test API Endpoints: Use Postman to make requests to the various API endpoints like /users/, /events/, etc.
 
-For more detailed documentation of the API endpoints, including request/response schemas and available operations, please visit: [API Documentation](http://localhost:8000/docs)
+Example API Requests:
 
 ### User Collection
 
@@ -169,6 +169,18 @@ For more detailed documentation of the API endpoints, including request/response
    ```
 
 Replace `{user_id}` and `{event_id}` with actual IDs when testing. For the OAuth 2.0 login, you'll need to obtain a valid OAuth access token from the authentication provider.
+
+Base URL: `http://localhost:8000/api`
+
+For more detailed documentation of the API endpoints, including request/response schemas and available operations, please visit: [API Documentation](http://localhost:8000/docs)
+
+## Database Population
+
+The sample data is provided in a CSV file, containing event information scraped from NYU Engage. This file includes event titles, descriptions, dates, and locations that we used to populate and test the database.
+
+To load the sample data from the CSV into your MongoDB database:
+Use Python’s pandas library to read the CSV and insert the data into MongoDB:
+
 
 ## Credits
 
