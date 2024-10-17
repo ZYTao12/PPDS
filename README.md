@@ -85,11 +85,9 @@ The server should now be running at `http://localhost:8000`. You can access the 
 
 ## Test the API
 
-You can use Postman to interact with the API. Here are some example requests for testing the API endpoints:
+You can use Postman to interact with the API. 
 
-Test API Endpoints: Use Postman to make requests to the various API endpoints like /users/, /events/, etc.
-
-Example API Requests:
+Here are some example requests for testing the API endpoints:
 
 ### User Collection
 
