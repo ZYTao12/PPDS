@@ -13,7 +13,7 @@ This application solves the problem of manually managing event invitations and R
 
 ## Submission Structure
 
-This week's portion of the project uses **FastAPI** for the backend and **MongoDB** as the database to store user and event data. The app integrates with Google Calendar and uses API routes to manage user and event operations.
+This week's portion of the project uses **FastAPI** for the backend and **MongoDB** as the database to store user and event data. Our next steps are to integrate the web app with Google Calendar and use API routes to manage user and event operations.
 
 ### Files:
 
