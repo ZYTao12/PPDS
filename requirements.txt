@@ -3,5 +3,4 @@ uvicorn
 pymongo
 python-dotenv
 pydantic
-bson
 requests
