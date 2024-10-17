@@ -41,12 +41,18 @@ This week's portion of the project uses **FastAPI** for the backend and **MongoD
 
 ## Setup Instructions
 
-1. Create a virtual environment:
+0. Clone the repository
+   ```
+   git clone https://github.com/ZYTao12/PPDS.git
+   cd PPDS
+   ```
+
+2. Create a virtual environment:
    ```
    python -m venv venv
    ```
 
-2. Activate the virtual environment:
+3. Activate the virtual environment:
    - On Windows:
      ```
      venv\Scripts\activate
@@ -56,12 +62,12 @@ This week's portion of the project uses **FastAPI** for the backend and **MongoD
      source venv/bin/activate
      ```
 
-3. Install the required dependencies:
+4. Install the required dependencies:
    ```
    pip install -r requirements.txt
    ```
 
-4. Set up environment variables:
+5. Set up environment variables:
    - Create a `.env` file in the root directory
    - Add the following variables:
      ```
@@ -69,7 +75,7 @@ This week's portion of the project uses **FastAPI** for the backend and **MongoD
      MONGODB_PASSWORD=your_mongodb_password
      ```
 
-5. Start the FastAPI server:
+6. Start the FastAPI server:
    ```
    cd backend
    uvicorn main:app --reload
